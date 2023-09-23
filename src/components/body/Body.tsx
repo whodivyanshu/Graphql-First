@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 import styles from "./body.module.css"
 
 
-export default function ActionAreaCard(props) {
+export default function ActionAreaCard(props: { image: string | undefined; name: string | number }) {
     return (
         <Card sx={{ maxWidth: 345 }} className={styles.bodyy} >
             <CardActionArea>

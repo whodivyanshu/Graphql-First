@@ -10,6 +10,8 @@ import ActionAreaCard from '@/components/body/Body'
 
 const inter = Inter({ subsets: ['latin'] })
 
+
+
 export default function Home() {
   const { loading, error, data } = useQuery(GET_LAUNCHES);
 
@@ -20,14 +22,14 @@ export default function Home() {
   }
 
 
-  const filteredShips = data.ships.filter((ship) => ship.image !== null && ship.name !== null);
+  const filteredShips = data.ships.filter((ship: { image: null; name: null }) => ship.image !== null && ship.name !== null);
   console.log(filteredShips)
 
   return (
     <>
       <DenseAppBar />
       <div className={styles.main}>
-        {filteredShips.map((ship, index) => (
+        {filteredShips.map((ship: { image: any; name: any }, index: any) => (
           <ActionAreaCard key={index} image={ship.image} name={ship.name} />
 
         ))}
